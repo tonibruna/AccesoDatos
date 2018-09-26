@@ -10,6 +10,8 @@ public class CrearFichero {
 		try {
 		//Creamos ficheros de texto en ifc
 		FileWriter f1 = new FileWriter("C:\\Users\\ifc\\f1.txt");
+		
+		
 		FileWriter f2 = new FileWriter("C:\\Users\\ifc\\f2.txt");
 		
 		} catch (Exception ex) {

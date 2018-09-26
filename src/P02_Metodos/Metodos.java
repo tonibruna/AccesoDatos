@@ -16,7 +16,6 @@ public class Metodos {
 				
 		System.out.println(f1.getEncoding()); //metodo de ejemplo
 	    
-	    
 
 		} catch (Exception ex) {
 			
