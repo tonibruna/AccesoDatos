@@ -7,7 +7,7 @@ public class Metodos {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String path = "D:\\eclipse-workspace\\AD_01_Fciheros\\src\\P02_Metodos\\fichero_prueba.txt";
+		String path = "C:\\Users\\ifc\\eclipse-workspace\\f1.txt";
 		File f1 = new File(path);
 		
 		if(f1.exists()) {
