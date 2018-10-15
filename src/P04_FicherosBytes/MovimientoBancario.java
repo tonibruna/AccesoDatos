@@ -1,21 +1,20 @@
 package P04_FicherosBytes;
 
-	public class MovimientoBancario {
+import java.io.Serializable;
+
+public class MovimientoBancario implements Serializable{
 		
-		String fecha;
-		String concepto;
-		int cantidad;
-		boolean tipo;
+		private String fecha;
+		private String concepto;
+		private int cantidad;
+		private boolean tipo;
 		
 		
 		public MovimientoBancario(String fe, String co, int ca, boolean ti) {
 			
 			 fecha=fe;
-			 
 			 concepto=co;
-			 
 			 cantidad=ca;
-			 
 			 tipo=ti;
 		}
 		
@@ -62,5 +61,6 @@ package P04_FicherosBytes;
 			
 				tipo=ti;
 		}
+
 		
 }
