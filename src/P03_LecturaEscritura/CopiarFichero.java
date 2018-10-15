@@ -14,7 +14,7 @@ public class CopiarFichero {
 		File f1 = new File("C:\\Users\\ifc\\eclipse-workspace\\copiarfichero1.txt");
 		f1.createNewFile();
 		
-		//Creamos el primer fichero
+		//Creamos el segundo fichero donde copiaremos
 		File f2 = new File("C:\\Users\\ifc\\eclipse-workspace\\copiarfichero2.txt");
 		f2.createNewFile();
 		
