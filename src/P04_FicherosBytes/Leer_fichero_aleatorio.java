@@ -22,7 +22,7 @@ public class Leer_fichero_aleatorio {
 		int posicion=0;//variable para meter la posicion de byte que quieres buscar
 		
 		try {
-			for (;;) {//este for sirve para hacer un bucle infinito
+			do{
 				
 				raf.seek(posicion); //para que fije la posicion de byte donde quieres leer (en este caso en 0).
 				id=raf.readInt();//guardo en id el primer entero que aparece
@@ -41,13 +41,10 @@ public class Leer_fichero_aleatorio {
 				
 				System.out.println("Id: "+id+"Apellidos: "+apellidos+"Departamento: "+departamento+"Salario: "+salario);
 				
-				if(raf.getFilePointer()==raf.length()) {    //el primer metodo es para saber la posicion donde esta el puntero
-															//el segundo me dice el total de bytes de la informacion
-					break;//rompemos el bucle infinito    
+				}while(raf.getFilePointer()!=raf.length());  //el primer metodo es para saber la posicion donde esta el puntero
+															 //el segundo me dice el total de bytes de la informacion  
 					
-				}
 				
-			}
 			raf.close();
 		}
 		catch(EOFException e) {
