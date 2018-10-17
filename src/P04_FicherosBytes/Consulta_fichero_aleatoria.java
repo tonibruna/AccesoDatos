@@ -23,13 +23,12 @@ public class Consulta_fichero_aleatoria {//para consultar directamente un determ
 		
 		raf.seek(posicion);
 		
-		id=raf.readInt();
+		id=raf.readInt(); //hay que leer en el mismo orden en el que escribimos
 		
 		for (int i=0; i<apellido.length;i++) {//metemos en un auxiliar los apellidos
 			aux=raf.readChar();
 			apellido[i]=aux;
 		}
-		
 		
 		apellidos = new String(apellido);
 		departamento = raf.readInt();
