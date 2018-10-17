@@ -26,7 +26,6 @@ public class Leer_fichero_aleatorio {
 				
 				raf.seek(posicion); //para que fije la posicion de byte donde quieres leer (en este caso en 0).
 				id=raf.readInt();//guardo en id el primer entero que aparece
-				System.out.println(id);
 				
 				posicion+=36;//para que lea cada 36 bytes el id
 				
@@ -39,7 +38,7 @@ public class Leer_fichero_aleatorio {
 				departamento = raf.readInt();
 				salario = raf.readDouble();
 				
-				System.out.println("Id: "+id+"Apellidos: "+apellidos+"Departamento: "+departamento+"Salario: "+salario);
+				System.out.println("Id: "+id+" Apellidos: "+apellidos+" Departamento: "+departamento+" Salario: "+salario);
 				
 				}while(raf.getFilePointer()!=raf.length());  //el primer metodo es para saber la posicion donde esta el puntero
 															 //el segundo me dice el total de bytes de la informacion  
