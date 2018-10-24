@@ -84,7 +84,6 @@ public class ListaReproduccionMain {
 		 		posicion= raf.length();//con estas dos lineas hacemos que las canciones no se sobreescriban
 				raf.seek(posicion);//el puntero posicion marca la posicion a escribir a partir de los bytes que ocupa
 				
-				
 		 		raf.writeInt(id);
 		 		raf.writeInt(anyo);
 		 		
