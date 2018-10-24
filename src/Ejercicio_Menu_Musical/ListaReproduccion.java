@@ -95,7 +95,6 @@ public class ListaReproduccion {
 				 *2 string = 2b x 10 x 2 = 40 bytes
 				  1 boolean = 1 bytes*/
 				
-				id=raf.readInt();
 				if(existe_id==id) {
 					return true;
 				}
