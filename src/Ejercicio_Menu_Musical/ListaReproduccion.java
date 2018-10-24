@@ -25,8 +25,6 @@ public class ListaReproduccion {
 		// Creamos un constructor vacio para que nos deje inicializar la Lista de reproduccion 
 	}
 
-
-
 	public int getId() {
 		return id;
 		 
