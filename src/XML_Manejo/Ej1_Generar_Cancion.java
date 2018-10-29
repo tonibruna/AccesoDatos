@@ -13,7 +13,7 @@ public class Ej1_Generar_Cancion {
 	public static void main(String[] args) throws IOException {
 		
 		File f = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
-		+"\\src\\P04_FicherosBytes\\Cancion.dat");
+		+"\\src\\P04_FicherosBytes\\Canciones.dat");
 		f.createNewFile();
 		
 		FileOutputStream fileout = new FileOutputStream(f);
