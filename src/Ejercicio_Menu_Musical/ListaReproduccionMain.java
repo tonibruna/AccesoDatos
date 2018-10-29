@@ -35,7 +35,7 @@ public class ListaReproduccionMain {
 	 	
 	 	int id,anyo;//4+4 bytes
 	 	String titulo,artista;//20+20 bytes
-	 	Boolean cancion_españa;//1 byte
+	 	boolean cancion_españa;//1 byte
 	 	
 	 	char[] titulos = new char[10];
 	 	char[] artistas = new char[10];
