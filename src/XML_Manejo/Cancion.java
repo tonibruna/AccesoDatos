@@ -81,9 +81,15 @@ public class Cancion implements Serializable {
 		this.cancion_españa=ce;
 	
 	}
-	
+	/**
+	 * Comprobar la existencia del Id de una cancion
+	 * @param existe_id
+	 * @return boolean 
+	 * @throws IOException
+	 */
 	public boolean comprobarId (int existe_id) throws IOException{
-		File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\listaReproduccion.dat");
+		File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
+				+ "\\src\\P04_FicherosBytes\\listaReproduccion.dat");
 		RandomAccessFile raf = new RandomAccessFile(f1,"r");
 		int posicion=0,id;
 		
