@@ -1,99 +1,107 @@
 package XML_Manejo;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-
-import javax.lang.model.element.Element;
-import javax.naming.spi.DirStateFactory.Result;
-import javax.swing.text.Document;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
-import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.*;
+import java.io.*;
 
 public class Ej2_Crear_Cancion {
 
 	public static void main(String[] args) throws IOException{
 		
-		  File fichero = new File ("C:\\Users\\ifc\\eclipse-workspace"
-		  +"\\\\AD_01_Ficheros\\\\src\\\\P04_FicherosBytes\\\\Canciones.dat");
-	 	  RandomAccessFile file = new RandomAccessFile(fichero,"r");
-		   
-		   int  id, anyo, posicion=0; //para situarnos al principio del fichero        
-		   String titulo,artista;
-		   boolean cancion_españa;
-		   char aux;
-		   char[] titulos = new char[10];
-		   char[] artistas = new char[10];
-		     
-		   // Instancia para construir el parser
-		   DocumentBuilderFactory factory =
-		                  DocumentBuilderFactory.newInstance();
+		 //Creamos variable de fichero y flujo de lectura de objetos
+		
+		  File f = new File ("C:\\Users\\ifc\\eclipse-workspace"
+		  		+ "\\AD_01_Ficheros\\src\\P04_FicherosBytes\\Canciones.dat");
+	 	  
+		  FileInputStream fileIn = new FileInputStream(f);
+		  ObjectInputStream objectIn = new ObjectInputStream(fileIn);
 		  
-		   try {
-			   
-		     DocumentBuilder builder = factory.newDocumentBuilder();
-		     DOMImplementation implementation = builder.getDOMImplementation();
-		     Document document = 
-		          implementation.createDocument(null, "Canciones", null);
-		     document.setXmlVersion("1.0"); 
+		 //Creamos variable
+		  
+		  Cancion cancion = new Cancion();
 		   
-		     for(;;) {
+		 // Instancia para construir el parser
+		   
+		 DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+		  
+		 try {
+		
+			//Para construir el documento XML
+			 
+		   DocumentBuilder builder = factory.newDocumentBuilder();
+		     
+		   DOMImplementation implementation = builder.getDOMImplementation();
+		   
+		   Document document = 
+				   implementation.createDocument(null, "Canciones", null);
+		         document.setXmlVersion("1.0"); 
+		   
+		     for(int i=0;i<5;i++) {
 		    	 
-				 file.seek(posicion);
-				 id=file.readInt();   // obtengo id de empleado	  	  
-			       for (int i = 0; i < apellido.length; i++) {
-			         aux = file.readChar();
-			         apellido[i] = aux;    
-			       }   
-			       String apellidos = new String(apellido);
-			       dep = file.readInt();
-			  	   salario = file.readDouble();  
-				   
-				 if(id>0) {
-				   
-					 Element raiz = 
-			                   document.createElement("cancion");//nodo empleado
+		    	 	 //leemos objeto cancion
+				     cancion = (Cancion) objectIn.readObject();
+		    	 
+				     //creamos nodo raiz 
+					 Element raiz = document.createElement("cancion");
+					 //añadimos nodo principal
 			         document.getDocumentElement().appendChild(raiz); 
 			        
+			         //Creacion de elementos
 			         // ID                       
-			         CrearElemento("id",Integer.toString(id), raiz, document); 
+			         CrearElemento("id",Integer.toString(cancion.getId()), raiz, document); 
 			         // Año
-			         CrearElemento("anyo",Integer.toString(id), raiz, document); 
+			         CrearElemento("anyo",Integer.toString(cancion.getAnyo()), raiz, document); 
 			         // Titulo
-			         CrearElemento("titulos",titulos.trim(), raiz, document); 
+			         CrearElemento("titulos",cancion.getTitulo(), raiz, document); 
 			         // Artista
-			         CrearElemento("artista",, raiz,document); 
+			         CrearElemento("artista",cancion.getArtista(), raiz,document); 
 			         //Cancion Española
-			         CrearElemento("cancion_española",titulos.trim(), raiz, 
-			        		                                        document); 
+			         CrearElemento("cancion_española",Boolean.toString(cancion.getCancionEspañola()), 
+			        		 raiz, document); 
 				 }	
-				 
-				 posicion= posicion+49; // me posiciono para el sig empleado	  	  
-				 
-				 if (file.getFilePointer() == file.length()) break; 
-
-		     }
 				
 		     Source source = new DOMSource(document);
+		     
 		     Result result = 
-		            new StreamResult(new java.io.File("Empleados.xml"));        
+		            new StreamResult(new java.io.File("C:\\Users\\ifc\\eclipse-workspace"
+		          		  +"\\AD_01_Ficheros\\src\\P04_FicherosBytes\\Canciones.dat"));  
+		     
 		     Transformer transformer =
 		            TransformerFactory.newInstance().newTransformer();
-		     transformer.transform(source, result); // se transforma el documento al fichero
+		     
+		     //se trasforma el documento al fichero
+		     transformer.transform(source, result);
+
 		    
 		    // MOSTRAR EL DOCUMENTO POR CONSOLA
-		    // Result console = new StreamResult(System.out);
-		    // transformer.transform(source, console);	   
+		    Result console = new StreamResult(System.out);
+		    transformer.transform(source, console);	   
 			   
 		    }catch(Exception e){ System.err.println("Error: "+ e); }
 		    
-		    file.close();  //cerrar fichero 	
-		 }//fin de main
-	}
+		 objectIn.close(); 
+		 
+ } //fin de main
+
+//Insercion de los datos del empleado
+	/**
+	 * Metodo que crea un elemento para escribirlo en documento xml
+	 * @param datoCancion Elemento de la canción
+	 * @param valor Valor que se va a dar al elemento
+	 * @param raiz Elemento raiz
+	 * @param document Documento donde se van a añadir estos elementos
+	 */
+static void  CrearElemento(String datoCancion, String valor,
+                           Element raiz, Document document)
+{
+   Element elem = document.createElement(datoCancion); 
+   Text text = document.createTextNode(valor); //damos valor
+   raiz.appendChild(elem); //pegamos el elemento hijo a la raiz
+   elem.appendChild(text); //pegamos el valor al elemento hijo	 	
+ }
+
+}//fin de la clase
 
