@@ -88,9 +88,9 @@ public class Cancion implements Serializable {
 	 * @throws IOException
 	 */
 	public boolean comprobarId (int existe_id) throws IOException{
-		File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
-				+ "\\src\\P04_FicherosBytes\\listaReproduccion.dat");
-		RandomAccessFile raf = new RandomAccessFile(f1,"r");
+		File f = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
+				+ "\\src\\XML_Manejo\\Canciones.dat");
+		RandomAccessFile raf = new RandomAccessFile(f,"r");
 		int posicion=0,id;
 		
 		try {
