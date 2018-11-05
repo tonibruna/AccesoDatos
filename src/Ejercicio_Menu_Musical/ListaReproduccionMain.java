@@ -10,160 +10,285 @@ public class ListaReproduccionMain {
 
 	public static void main(String[] args) throws IOException{
 		
-		System.out.println(" _____________________________");
-		System.out.println("| LISTA DE REPRODUCCION       |");
-		System.out.println("|-----------------------------|");
-		System.out.println("| 1.Crear fichero             |");
-		System.out.println("| 2.Consultar datos           |");
-		System.out.println("| 3.Insertar datos            |");
-		System.out.println("| 4.Modificar año cancion     |");
-		System.out.println("| 5.Borrar cancion            |");
-		System.out.println("| 6.Mostrar canciones borradas|");
-		System.out.println("| 7.Mostrar listado canciones |");
-		System.out.println("| 8.Salir                     |");
-		System.out.println("|_____________________________|");
+		int numero=0;
 		
+		Scanner teclado= new Scanner(System.in);
 		
-		
-	 	Scanner teclado= new Scanner(System.in);
-	 	 
-	 	int opcion= teclado.nextInt();
-	 	File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\listaReproduccion.dat");
-	 	RandomAccessFile raf = new RandomAccessFile(f1,"rw");
- 		StringBuffer sbuf = null;
-	 	ListaReproduccion li = new ListaReproduccion ();
+		do {
+				System.out.println(" _____________________________");
+				System.out.println("| LISTA DE REPRODUCCION       |");
+				System.out.println("|-----------------------------|");
+				System.out.println("| 1.Crear fichero             |");
+				System.out.println("| 2.Consultar datos           |");
+				System.out.println("| 3.Insertar datos            |");
+				System.out.println("| 4.Modificar año cancion     |");
+				System.out.println("| 5.Borrar cancion            |");
+				System.out.println("| 6.Mostrar canciones borradas|");
+				System.out.println("| 7.Mostrar listado canciones |");
+				System.out.println("| 8.Salir                     |");
+				System.out.println("|_____________________________|");
+			
+				numero = teclado.nextInt();
+				File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\"
+			    + "AD_01_Ficheros\\src\\Ejerc_Lista_Reproduccion\\listaReproduccion.dat");
+			 	RandomAccessFile raf = new RandomAccessFile(f1,"rw");
+		 		StringBuffer sbuf = null;
+
+		 		ListaReproduccion li = new ListaReproduccion ();
 	 	
-	 	int id,anyo;//4+4 bytes
-	 	String titulo,artista;//20+20 bytes
-	 	boolean cancion_españa;//1 byte
+			 	int id,anyo;//4+4 bytes
+			 	String titulo,artista;//20+20 bytes
+			 	boolean cancion_españa;//1 byte
+			 	int anyo_anterior; //para modificar año cancion
+			 	char[] titulos = new char[10];
+			 	char[] artistas = new char[10];
+			 	char aux;
+			 	long posicion=0;
 	 	
-	 	char[] titulos = new char[10];
-	 	char[] artistas = new char[10];
-	 	char aux;
-	 	long posicion=0;
 	 	
-	 	
-	 	switch (opcion) { //para seleccionar solo uno de los casos
+			 	switch (numero) { 
 	
-	 	case 1:
-	 		System.out.println("Generamos un nuevo fichero de datos");
-			f1.createNewFile();
-	 	
-	 		break; 
+			 	case 1:
+				 		System.out.println("Generamos un nuevo fichero de datos");
+						f1.createNewFile();
+						System.out.println("Tu fichero ha sido creado");
+				 		break; 
 	  	
-	 	case 2:
-	 		System.out.println("Consulta de datos, mete el numero de Id que quieras consultar");
-	 		id=teclado.nextInt();
+			 	case 2:
+			 
+			 		do {
+				 			System.out.println("Introduce el numero de Id (mayor de 0)que quieras consultar");
+				 			id=teclado.nextInt();
+				 			
+			 		}while(id<=0);
+			 		
+			 		if(li.comprobarId(id)) {
+			 			
+				 			posicion=(id-1)*49;
+				 			raf.seek(posicion);
+				 			id=raf.readInt();
+				 			anyo=raf.readInt();
+				 			
+				 			for(int i=0;i<titulos.length;i++) {
+				 					aux=raf.readChar();
+				 					titulos[i]=aux;
+				 			}
+				 			titulo = new String(titulos);
+				 			
+				 			for(int i=0;i<artistas.length;i++) {
+								aux=raf.readChar();
+								artistas[i]=aux;
+							}					
+							artista = new String(artistas);
+						
+							cancion_españa = raf.readBoolean();
+			 			
+							System.out.println("Id: "+li.getId()+", Año: "+li.getAnyo()+", Titulo: "+li.getTitulo()
+									+", Artista: "+li.getArtista()+", Cancion española: "+li.getCancionEspañola());
+			 		}else 
+			 			
+			 				System.out.println("El Id no existe");
+			 		
+			 		break;
 	 		
-	 		if(li.comprobarId(id)) {
-	 			System.out.println(
-	 		 		"Id: "+li.getId()+", Año: "+li.getAnyo()+", Titulo: "+li.getTitulo()+", Artista: "+li.getArtista()+", Cancion española: "+li.getCancionEspañola());
-	 		}else {
-	 			System.out.println("El Id no existe");
-	 		}
-	 		break;
+			 	case 3:
+			 		
+			 		do {
+				 			System.out.println("Introduce un numero de Id para insertar(mayor de 0)");
+				 			id=teclado.nextInt();
+				 			
+			 		}while(id<=0);
 	 		
-	 	case 3:
-	 		System.out.println("Introduce un id desde tu teclado");
-	 		id=teclado.nextInt();
-	 		
-	 		if(!li.comprobarId(id)) {//el simbolo ! sirve de negacion, en este caso si comprobarId es igual a False
-		 		System.out.println("Insertamos datos de canciones");
-		 		System.out.println("Inserta el Id");
-		 		id=teclado.nextInt();
-		 		System.out.println("Inserta el Año");
-		 		anyo=teclado.nextInt();
-		 		System.out.println("Inserta el Titulo");
-		 		titulo=teclado.nextLine();
-		 		titulo=teclado.nextLine();
-		 		System.out.println("Inserta el Artista");
-		 		artista=teclado.nextLine();
-		 		System.out.println("Inserta si es cancion española(true)");
-		 		cancion_españa=teclado.nextBoolean();
+			 		if(!li.comprobarId(id)) {//el simbolo ! sirve de negacion, en este caso si comprobarId es igual a False
+					 		System.out.println("Insertamos datos de canciones");
+					 		System.out.println("Inserta el Año");
+					 		anyo=teclado.nextInt();
+					 		System.out.println("Inserta el Titulo");
+					 		titulo=teclado.nextLine();
+					 		titulo=teclado.nextLine();
+					 		System.out.println("Inserta el Artista");
+					 		artista=teclado.nextLine();
+					 		System.out.println("Inserta si es cancion española(true)");
+					 		cancion_españa=teclado.nextBoolean();
 		 				
-		 		posicion= raf.length();//con estas dos lineas hacemos que las canciones no se sobreescriban
-				raf.seek(posicion);//el puntero posicion marca la posicion a escribir a partir de los bytes que ocupa
-				
-		 		raf.writeInt(id);
-		 		raf.writeInt(anyo);
-		 		
-		 		sbuf = new StringBuffer(titulo);
-				sbuf.setLength(10);
-				raf.writeChars(sbuf.toString());
-				sbuf = new StringBuffer(artista);
-				sbuf.setLength(10);
-				raf.writeChars(sbuf.toString());
-				raf.writeBoolean(cancion_españa);
-				System.out.println("Se ha creado la cancion");
-				
-	 		}else
-	 			System.out.println("El Id de esta cancion ya esta introducido");
-	 		 break;
+					 		posicion= raf.length();//con estas dos lineas hacemos que las canciones no se sobreescriban
+							raf.seek(posicion);//el puntero posicion marca la posicion a escribir a partir de los bytes que ocupa
+							
+					 		raf.writeInt(id);
+					 		raf.writeInt(anyo);
+				 		
+					 		sbuf = new StringBuffer(titulo);
+							sbuf.setLength(10);
+							raf.writeChars(sbuf.toString());
+							sbuf = new StringBuffer(artista);
+							sbuf.setLength(10);
+							raf.writeChars(sbuf.toString());
+							raf.writeBoolean(cancion_españa);
+							System.out.println("Se ha creado la cancion");
+					
+				 	}else
+				 			System.out.println("El Id de esta cancion ya esta introducido");
+			 		
+				 	break;
 	 		 
-	 	case 4:
-	 		System.out.println("Modificamos el año de cancion");
+			 	case 4:
+			 		
+			 		do {
+			 				System.out.println("Introduce un id para modificar el año de la cancion");
+			 				id=teclado.nextInt();
+			 				
+			 		}while(id<=0);
+			 		
+			 		if(li.comprobarId(id)) {
+			 			
+				 			posicion=(id-1)*49+4; //con esto el puntero lo posicionas en el año
+				 			                      //sumandole los 4 bytes de valor que tiene el id
+				 			raf.seek(posicion);
+				 			anyo_anterior=raf.readInt();
+			 			
+				 			System.out.println("Introduce el año modificado");
+				 			anyo=teclado.nextInt();
+				 			
+				 			raf.seek(posicion);
+				 			
+				 			raf.writeInt(anyo);
+				 			
+				 			for(int i=0;i<titulos.length;i++) {
+			 					aux=raf.readChar();
+			 					titulos[i]=aux;
+				 			}
+				 			titulo = new String(titulos);
+			 			
+				 			System.out.println("Id: "+id+" Año anterior: "+anyo_anterior+
+				 					" Año nuevo: "+anyo+" Titulo: "+titulo);
+			 		}else 
+			 				
+			 				System.out.println("No existe cancion con este Id");
+			 		
+			 		break;
 	 		
-	 		break;
+			 	case 5:
+			 			do {
+			 				
+			 					System.out.println("Introduce un id para borrar la cancion");
+			 					id=teclado.nextInt();
+			 			
+			 			}while(id<=0);
+			 			
+			 		if(li.comprobarId(id)) {
+				 			
+				 			posicion=(id-1)*49;
+				 			
+				 			raf.seek(posicion);
+
+				 			raf.writeInt(-1);
+				 			System.out.println("Se ha borrado la cancion elegida");
+			 		}else 
+			 				System.out.println("No hay cancion con este Id");
+			 			
 	 		
-	 	case 5:
-	 		System.out.println("Borra cancion que desees");
-	 		 
-	 		break;
+			 		break;
 	 		
-	 	case 6:
-	 		System.out.println("Te mostramos las canciones borradas");
-	 		
-	 		break;
-	 		
-	 	case 7:
-	 		System.out.println("Listado de canciones");
-	 		
-			try {
-				posicion=0;
-				do{
-					
-					raf.seek(posicion); //para que fije la posicion de byte donde quieres leer (en este caso en 0).
-					id=raf.readInt();//guardo en id el primer entero que aparece
-					anyo = raf.readInt();
-					
-					for (int i=0; i<titulos.length;i++) {
-						aux=raf.readChar();
-						titulos[i]=aux;
+			 	case 6:
+			 		
+			 		try {
+			 			
+			 				posicion=0;
+			 				System.out.println("CANCIONES BORRADAS:");
+			 				do {
+			 					
+			 						raf.seek(posicion);
+			 						id=raf.readInt();
+			 						
+			 						if(id==1) {
+			 							
+			 								anyo=raf.readInt();
+			 								
+			 								for(int i=0;i<titulos.length;i++) {
+			 									aux=raf.readChar();
+			 									titulos[i]=aux;
+			 								}					
+			 								titulo = new String(titulos);
+			 								
+			 								for(int i=0;i<artistas.length;i++) {
+			 									aux=raf.readChar();
+			 									artistas[i]=aux;
+			 								}					
+			 								artista = new String(artistas);
+			 								
+			 								cancion_españa = raf.readBoolean();
+			 								
+			 								System.out.println("Id: "+id+" Año: "+anyo+" Titulo: "+titulo+" Artista: "+artista+" ¿Canción española?: "+cancion_españa);
+			 						}			
+			 						
+			 							posicion += 49;
+			 							
+			 				}while(raf.getFilePointer()!=raf.length());
+			 				/*.getFilePointer nos dice hacia donde está apuntando el puntero
+							.length dice el total de bytes que ocupa la informacion escrita en el fichero*/
+			 			
+			 		}catch (EOFException e) {			
+						System.out.println("No hay ninguna canción borrada");
 					}
-					titulo= new String(titulos);
+			 		
+			 		break;
+	 		
+	 	
+			 	case 7:
+	 		                   System.out.println("LISTADO DE CANCIONES:");
+	 		
+			
+	 		                   try {
+	 		                	   		posicion=0;
+	 		                	   		
+	 		                	   		do{
 					
-					for (int i=0; i<artistas.length;i++) {
-						aux=raf.readChar();
-						artistas[i]=aux;
-					}
-					artista= new String(artistas);
-					cancion_españa= raf.readBoolean();
+											raf.seek(posicion); //para que fije la posicion de byte donde quieres leer (en este caso en 0).
+											id=raf.readInt();//guardo en id el primer entero que aparece
+											anyo = raf.readInt();
+											
+											for (int i=0; i<titulos.length;i++) {
+												aux=raf.readChar();
+												titulos[i]=aux;
+											}
+											titulo= new String(titulos);
+											
+											for (int i=0; i<artistas.length;i++) {
+												aux=raf.readChar();
+												artistas[i]=aux;
+											}
+											artista= new String(artistas);
+											cancion_españa= raf.readBoolean();
+											
+											System.out.println("Id: "+id+" Titulo: "+titulo+" Artista: "+artista+" Año: "+anyo);
+											
+											posicion+=49;
 					
-					System.out.println("Id: "+id+" Titulo: "+titulo+" Artista: "+artista+" Año: "+anyo);
-					
-					posicion+=49;
-					
-					}while(raf.getFilePointer()!=raf.length());  //el primer metodo es para saber la posicion donde esta el puntero
-																 //el segundo me dice el total de bytes de la informacion  
+	 		                	   		}while(raf.getFilePointer()!=raf.length());  //el primer metodo es para saber la posicion donde esta el puntero
+																 					//el segundo me dice el total de bytes de la informacion  
 						
 					
-				raf.close();
-			}
-			catch(EOFException e) {
-				System.out.println("Fin de fichero");
-			}
+	 		                	   		raf.close();
+	 		                   }catch(EOFException e) {
+	 		                   							System.out.println("Fin de fichero");
+	 		                   }
 	 		
-	 		break;
+	 		              break;
 	 		
-	 	case 8:
-	 		System.out.println("Good bye my friend");
+			 	case 8:
+			 				System.out.println("Has salido del MENU. Good bye my friend");
 	 		
-	 		break;
+			 				break;
 	 		
-	 		default:System.out.println("Has metido una opcion incorrecta"); ; break;
+			 	default:
+			 		
+			 		System.out.println("Has elegido una opcion incorrecta, prueba con un numero del 1 al 8.");
 	 		
 	 	}
+	 	
+		}while(numero!=8);	
 	 	teclado.close();
 	}
+
 
 }

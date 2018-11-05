@@ -77,7 +77,7 @@ public class Ej1_Crear_Cancion {
 		     Source source = new DOMSource(document);
 		     
 		     Result result = 
-		            new StreamResult(new java.io.File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones.dat"));  
+		            new StreamResult(new java.io.File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones.xml"));  
 		     
 		     Transformer transformer =
 		            TransformerFactory.newInstance().newTransformer();

@@ -17,9 +17,6 @@ public class Insertar_final_fichero_aleatorio {
 		int departamento = 11;
 		double salario = 3500;
 		
-		long posicion= raf.length();
-		raf.seek(posicion);
-		
 		StringBuffer sbuf = null;
 		
 		raf.writeInt(id);//con esto conseguimos el numero empleado (id)

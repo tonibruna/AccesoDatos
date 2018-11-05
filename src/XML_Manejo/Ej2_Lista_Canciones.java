@@ -10,8 +10,8 @@ public class Ej2_Lista_Canciones {
 	    public Ej2_Lista_Canciones() {    	
 	    }
 
-	    public void add(Cancion p) {
-	            lista.add(p);
+	    public void add(Cancion ca) {
+	            lista.add(ca);
 	    }
 	   
 	   public List<Cancion> getListaCanciones() {
