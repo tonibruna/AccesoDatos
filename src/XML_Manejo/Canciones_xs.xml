@@ -1,0 +1,37 @@
+<ListaCanciones>
+  <DatosCancion>
+    <id>1</id>
+    <anyo>1999</anyo>
+    <titulo>1999</titulo>
+    <artista>Loveof</artista>
+    <cancion__españa>true</cancion__españa>
+  </DatosCancion>
+  <DatosCancion>
+    <id>2</id>
+    <anyo>2017</anyo>
+    <titulo>Autoterapia</titulo>
+    <artista>Izal</artista>
+    <cancion__españa>true</cancion__españa>
+  </DatosCancion>
+  <DatosCancion>
+    <id>3</id>
+    <anyo>2009</anyo>
+    <titulo>Cophenage</titulo>
+    <artista>Vetusta</artista>
+    <cancion__españa>true</cancion__españa>
+  </DatosCancion>
+  <DatosCancion>
+    <id>4</id>
+    <anyo>2002</anyo>
+    <titulo>Live</titulo>
+    <artista>Sabina</artista>
+    <cancion__españa>true</cancion__españa>
+  </DatosCancion>
+  <DatosCancion>
+    <id>5</id>
+    <anyo>2012</anyo>
+    <titulo>Gran truco </titulo>
+    <artista>Loveof</artista>
+    <cancion__españa>true</cancion__españa>
+  </DatosCancion>
+</ListaCanciones>
