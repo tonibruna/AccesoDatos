@@ -79,7 +79,8 @@ public class ListaReproduccion {
 	}
 	
 	public boolean comprobarId (int existe_id) throws IOException{
-		File f1 = new File ("C:\\Users\\Maria Aznar\\eclipse-workspace\\AcessoDatos\\src\\Ejerc_Lista_Reproduccion\\listaReproduccion.dat");
+		File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
+				+ "\\src\\Ejerc_Lista_Reproduccion\\listaReproduccion.dat");
 		RandomAccessFile raf = new RandomAccessFile(f1,"r");
 		int posicion=0,id;
 		
