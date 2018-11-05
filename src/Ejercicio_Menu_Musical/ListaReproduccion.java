@@ -8,9 +8,9 @@ import java.io.RandomAccessFile;
 
 public class ListaReproduccion {
 	
-	int id, anyo;
-	String titulo, artista;
-	Boolean cancion_españa;
+	private int id, anyo;
+	private String titulo, artista;
+	private boolean cancion_españa;
 	
 	public ListaReproduccion(int i, int a, String ti, String ar, Boolean ce) {
 		
@@ -79,7 +79,7 @@ public class ListaReproduccion {
 	}
 	
 	public boolean comprobarId (int existe_id) throws IOException{
-		File f1 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\listaReproduccion.dat");
+		File f1 = new File ("C:\\Users\\Maria Aznar\\eclipse-workspace\\AcessoDatos\\src\\Ejerc_Lista_Reproduccion\\listaReproduccion.dat");
 		RandomAccessFile raf = new RandomAccessFile(f1,"r");
 		int posicion=0,id;
 		
