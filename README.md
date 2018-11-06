@@ -6,3 +6,9 @@ Ejercicios para el modulo
 -(Proyecto Metodos) Trata de los diferentes metodos que podemos utilizar sobre un fichero
 
 -(Proyecto LesturaEscritura) Trata de distinta soperaciones de FileReader, FileWriter y Buffered
+
+-(Proyecto FicherosBytes) Lectura y escritura de ficheros en bytes, de objetos y consultas de ficheros aleatorios
+
+-(Ejercicio_Menu_Musical) Ejercicio con un menu para elegir opcion en la clase main y la clase ListaReproduccion.
+
+-(XML Manejo) Crear, escribir y leer lista de canciones en XML a partir de ficheros .dat
