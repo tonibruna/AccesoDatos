@@ -1,3 +1,5 @@
+//Convertir un archivo Java en un XML
+
 package XML_Manejo;
 
 import java.io.*;
@@ -25,7 +27,7 @@ public class Ej2_Escribir_Cancion {
             while (true) { //lectura del fichero
                 //leer una cancion
       	    Cancion cancion= (Cancion) dataIS.readObject();    
-      	    listacan.add(cancion); //añadir cancion a la lista  
+      	    listacan.add(cancion); //aï¿½adir cancion a la lista  
             }	
           }catch (EOFException eo) {}
           
