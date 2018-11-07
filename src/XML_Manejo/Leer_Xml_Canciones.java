@@ -44,7 +44,7 @@ class GestionContenido extends DefaultHandler {
 	    public void endDocument() {
 	        System.out.println("Final del Documento XML");
 	        
-	        System.out.println("->El numero de canciones españolas es " + contador);
+	        System.out.println("->El numero de canciones espaï¿½olas es " + contador);
 	    }
 	    
 	    public void startElement(String uri, String nombre,

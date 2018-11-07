@@ -10,7 +10,9 @@ import javax.xml.transform.stream.*;
 import java.io.*;
 
 public class Ej3_Convertidor_XML_HTML {
+	
  public static void main(String argv[]) throws IOException{ 
+	 
   String hojaEstilo = "C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
   		+ "\\src\\XML_Manejo\\cancionesPlantilla.xsl";
   
@@ -24,12 +26,13 @@ public class Ej3_Convertidor_XML_HTML {
   
   Source estilos =new StreamSource(hojaEstilo); //fuente XSL
   Source datos =new StreamSource(datosCanciones); //fuente XML
-  Result result = new StreamResult(os);         //resultado de la transformaci�n
+  Result result = new StreamResult(os);      //resultado de la transformacion
   
   try{     
    Transformer transformer =  
                TransformerFactory.newInstance().newTransformer(estilos);   
-   transformer.transform(datos, result);	//obtiene el HTML
+   
+   transformer.transform(datos, result); //obtiene el HTML
   }
   catch(Exception e){System.err.println("Error: "+e);}
   
