@@ -8,8 +8,13 @@
     <body> 
     <h1>LISTA CANCIONES</h1>
     <table border='1'>
-    <tr><th>id</th><th>anyo</th><th>titulos</th>
-	<th>artista</th>	<th>cancion_española</th></tr>
+    <tr>
+	<th>id</th>
+	<th>anyo</th>
+	<th>titulos</th>
+	<th>artista</th>	
+	<th>cancion_española</th>
+	</tr>
       <xsl:apply-templates select='Cancion' />
     </table>
     </body>
