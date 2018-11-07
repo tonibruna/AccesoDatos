@@ -1,4 +1,4 @@
-//Convertimos un fichero XML en HTML a traves de una plantilla XSL.
+//Convertimos un fichero XML en un fichero HTML a traves de una plantilla XSL.
 
 package XML_Manejo;
 

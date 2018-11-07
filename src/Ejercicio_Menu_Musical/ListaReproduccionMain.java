@@ -21,7 +21,7 @@ public class ListaReproduccionMain {
 				System.out.println("| 1.Crear fichero             |");
 				System.out.println("| 2.Consultar datos           |");
 				System.out.println("| 3.Insertar datos            |");
-				System.out.println("| 4.Modificar año cancion     |");
+				System.out.println("| 4.Modificar aï¿½o cancion     |");
 				System.out.println("| 5.Borrar cancion            |");
 				System.out.println("| 6.Mostrar canciones borradas|");
 				System.out.println("| 7.Mostrar listado canciones |");
@@ -38,8 +38,8 @@ public class ListaReproduccionMain {
 	 	
 			 	int id,anyo;//4+4 bytes
 			 	String titulo,artista;//20+20 bytes
-			 	boolean cancion_españa;//1 byte
-			 	int anyo_anterior; //para modificar año cancion
+			 	boolean cancion_espaÃ±a;//1 byte
+			 	int anyo_anterior; //para modificar aï¿½o cancion
 			 	char[] titulos = new char[10];
 			 	char[] artistas = new char[10];
 			 	char aux;
@@ -81,10 +81,10 @@ public class ListaReproduccionMain {
 							}					
 							artista = new String(artistas);
 						
-							cancion_españa = raf.readBoolean();
+							cancion_espaÃ±a = raf.readBoolean();
 			 			
-							System.out.println("Id: "+li.getId()+", Año: "+li.getAnyo()+", Titulo: "+li.getTitulo()
-									+", Artista: "+li.getArtista()+", Cancion española: "+li.getCancionEspañola());
+							System.out.println("Id: "+li.getId()+", Aï¿½o: "+li.getAnyo()+", Titulo: "+li.getTitulo()
+									+", Artista: "+li.getArtista()+", Cancion espaï¿½ola: "+li.getCancionEspaÃ±ola());
 			 		}else 
 			 			
 			 				System.out.println("El Id no existe");
@@ -101,15 +101,15 @@ public class ListaReproduccionMain {
 	 		
 			 		if(!li.comprobarId(id)) {//el simbolo ! sirve de negacion, en este caso si comprobarId es igual a False
 					 		System.out.println("Insertamos datos de canciones");
-					 		System.out.println("Inserta el Año");
+					 		System.out.println("Inserta el Aï¿½o");
 					 		anyo=teclado.nextInt();
 					 		System.out.println("Inserta el Titulo");
 					 		titulo=teclado.nextLine();
 					 		titulo=teclado.nextLine();
 					 		System.out.println("Inserta el Artista");
 					 		artista=teclado.nextLine();
-					 		System.out.println("Inserta si es cancion española(true)");
-					 		cancion_españa=teclado.nextBoolean();
+					 		System.out.println("Inserta si es cancion espaï¿½ola(true)");
+					 		cancion_espaÃ±a=teclado.nextBoolean();
 		 				
 					 		posicion= raf.length();//con estas dos lineas hacemos que las canciones no se sobreescriban
 							raf.seek(posicion);//el puntero posicion marca la posicion a escribir a partir de los bytes que ocupa
@@ -123,7 +123,7 @@ public class ListaReproduccionMain {
 							sbuf = new StringBuffer(artista);
 							sbuf.setLength(10);
 							raf.writeChars(sbuf.toString());
-							raf.writeBoolean(cancion_españa);
+							raf.writeBoolean(cancion_espaÃ±a);
 							System.out.println("Se ha creado la cancion");
 					
 				 	}else
@@ -134,19 +134,19 @@ public class ListaReproduccionMain {
 			 	case 4:
 			 		
 			 		do {
-			 				System.out.println("Introduce un id para modificar el año de la cancion");
+			 				System.out.println("Introduce un id para modificar el aï¿½o de la cancion");
 			 				id=teclado.nextInt();
 			 				
 			 		}while(id<=0);
 			 		
 			 		if(li.comprobarId(id)) {
 			 			
-				 			posicion=(id-1)*49+4; //con esto el puntero lo posicionas en el año
+				 			posicion=(id-1)*49+4; //con esto el puntero lo posicionas en el aï¿½o
 				 			                      //sumandole los 4 bytes de valor que tiene el id
 				 			raf.seek(posicion);
 				 			anyo_anterior=raf.readInt();
 			 			
-				 			System.out.println("Introduce el año modificado");
+				 			System.out.println("Introduce el aï¿½o modificado");
 				 			anyo=teclado.nextInt();
 				 			
 				 			raf.seek(posicion);
@@ -159,8 +159,8 @@ public class ListaReproduccionMain {
 				 			}
 				 			titulo = new String(titulos);
 			 			
-				 			System.out.println("Id: "+id+" Año anterior: "+anyo_anterior+
-				 					" Año nuevo: "+anyo+" Titulo: "+titulo);
+				 			System.out.println("Id: "+id+" Aï¿½o anterior: "+anyo_anterior+
+				 					" Aï¿½o nuevo: "+anyo+" Titulo: "+titulo);
 			 		}else 
 			 				
 			 				System.out.println("No existe cancion con este Id");
@@ -216,19 +216,19 @@ public class ListaReproduccionMain {
 			 								}					
 			 								artista = new String(artistas);
 			 								
-			 								cancion_españa = raf.readBoolean();
+			 								cancion_espaÃ±a = raf.readBoolean();
 			 								
-			 								System.out.println("Id: "+id+" Año: "+anyo+" Titulo: "+titulo+" Artista: "+artista+" ¿Canción española?: "+cancion_españa);
+			 								System.out.println("Id: "+id+" Aï¿½o: "+anyo+" Titulo: "+titulo+" Artista: "+artista+" ï¿½Canciï¿½n espaï¿½ola?: "+cancion_espaÃ±a);
 			 						}			
 			 						
 			 							posicion += 49;
 			 							
 			 				}while(raf.getFilePointer()!=raf.length());
-			 				/*.getFilePointer nos dice hacia donde está apuntando el puntero
+			 				/*.getFilePointer nos dice hacia donde estï¿½ apuntando el puntero
 							.length dice el total de bytes que ocupa la informacion escrita en el fichero*/
 			 			
 			 		}catch (EOFException e) {			
-						System.out.println("No hay ninguna canción borrada");
+						System.out.println("No hay ninguna canciï¿½n borrada");
 					}
 			 		
 			 		break;
@@ -258,9 +258,9 @@ public class ListaReproduccionMain {
 												artistas[i]=aux;
 											}
 											artista= new String(artistas);
-											cancion_españa= raf.readBoolean();
+											cancion_espaÃ±a= raf.readBoolean();
 											
-											System.out.println("Id: "+id+" Titulo: "+titulo+" Artista: "+artista+" Año: "+anyo);
+											System.out.println("Id: "+id+" Titulo: "+titulo+" Artista: "+artista+" Aï¿½o: "+anyo);
 											
 											posicion+=49;
 					

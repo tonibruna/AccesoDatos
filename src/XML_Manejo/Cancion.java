@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Cancion implements Serializable { 
 	private int id, anyo;//4+4bytes
 	private String titulo, artista;//20+20bytes
-	private Boolean cancion_españa;//1byte
+	private Boolean cancion_espaÃ±a;//1byte
 	//Total = 49bytes
 	
 	public Cancion(int i, int a, String ti, String ar, Boolean ce) {
@@ -18,7 +18,7 @@ public class Cancion implements Serializable {
 		anyo=a;
 		titulo=ti;
 		artista=ar;
-		cancion_españa=ce;
+		cancion_espaÃ±a=ce;
 	}
 	
 	public Cancion() {
@@ -26,7 +26,7 @@ public class Cancion implements Serializable {
 		anyo=0;
 		artista="";
 		titulo="";
-		cancion_españa=false;
+		cancion_espaÃ±a=false;
 	}
 
 	public int getId() {
@@ -49,8 +49,8 @@ public class Cancion implements Serializable {
 		
 	}
 	
-	public boolean getCancionEspañola() {
-		return cancion_españa;
+	public boolean getCancionEspaÃ±ola() {
+		return cancion_espaÃ±a;
 		
 	}
 	
@@ -76,9 +76,9 @@ public class Cancion implements Serializable {
 		this.artista=ar;
 	}
 	
-	public void setCancionEspañola (boolean ce) {
+	public void setCancionEspaÃ±ola (boolean ce) {
 		
-		this.cancion_españa=ce;
+		this.cancion_espaÃ±a=ce;
 	
 	}
 	/**

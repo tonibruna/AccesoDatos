@@ -10,7 +10,7 @@ public class ListaReproduccion {
 	
 	private int id, anyo;
 	private String titulo, artista;
-	private boolean cancion_españa;
+	private boolean cancion_espaÃ±a;
 	
 	public ListaReproduccion(int i, int a, String ti, String ar, Boolean ce) {
 		
@@ -18,7 +18,7 @@ public class ListaReproduccion {
 		anyo=a;
 		titulo=ti;
 		artista=ar;
-		cancion_españa=ce;
+		cancion_espaÃ±a=ce;
 	}
 	
 	public ListaReproduccion() {
@@ -45,8 +45,8 @@ public class ListaReproduccion {
 		
 	}
 	
-	public boolean getCancionEspañola() {
-		return cancion_españa;
+	public boolean getCancionEspaÃ±ola() {
+		return cancion_espaÃ±a;
 		
 	}
 	
@@ -72,9 +72,9 @@ public class ListaReproduccion {
 		this.artista=ar;
 	}
 	
-	public void setCancionEspañola (boolean ce) {
+	public void setCancionEspaÃ±ola (boolean ce) {
 		
-		this.cancion_españa=ce;
+		this.cancion_espaÃ±a=ce;
 	
 	}
 	
