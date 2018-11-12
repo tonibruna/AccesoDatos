@@ -1,4 +1,4 @@
-package JAXB;
+package P06_JAXB;
 
 import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlElement;

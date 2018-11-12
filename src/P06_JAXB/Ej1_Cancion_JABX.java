@@ -1,8 +1,8 @@
-package JAXB;
+package P06_JAXB;
 
 import javax.xml.bind.annotation.XmlType; 
 
-@XmlType(propOrder = {"id", "anyo", "titulo", "artista", "cancion_españa"})
+@XmlType(propOrder = {"id", "anyo", "titulo", "artista", "cancion_españa"}) 
 
 public class Ej1_Cancion_JABX {
 

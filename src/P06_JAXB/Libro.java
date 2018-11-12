@@ -1,10 +1,10 @@
-package JAXB;
+package P06_JAXB;
 
 import javax.xml.bind.annotation.XmlType; 
 
 @XmlType(propOrder = {"autor", "nombre", "editorial", "isbn"})
 
-public class Libro { 
+public class Libro {  
     private String nombre;
     private String autor;
     private String editorial;

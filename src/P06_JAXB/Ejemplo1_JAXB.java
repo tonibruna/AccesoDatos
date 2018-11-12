@@ -1,4 +1,4 @@
-package JAXB;
+package P06_JAXB;
 
 import java.io.File;
 import java.io.FileReader;
@@ -12,7 +12,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
  
 
-public class Ejemplo1_JAXB {
+public class Ejemplo1_JAXB { 
  
     private static final String MIARCHIVO_XML = "C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\JAXB\\libreria.xml";
  

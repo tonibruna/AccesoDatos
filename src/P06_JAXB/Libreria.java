@@ -1,4 +1,4 @@
-package JAXB;
+package P06_JAXB;
 
 import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //@XmlRootElement(namespace = "ejemplo1.xml")
 //@XmlRootElement(namespace = "")
 @XmlRootElement()
-public class Libreria {
+public class Libreria {  
 	 
     private ArrayList<Libro> listaLibro;
     private String nombre;
