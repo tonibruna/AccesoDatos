@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //@XmlRootElement(namespace = "")
 
 //Esto significa que la clases "Libreria.java" es el elemento raiz
-@XmlRootElement()
+ @XmlRootElement()
 
 public class Ej1_Lista_Canciones {
 	
