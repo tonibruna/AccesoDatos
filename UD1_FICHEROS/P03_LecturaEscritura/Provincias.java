@@ -10,7 +10,7 @@ public class Provincias {
 		
 		//Metemos un array de provincias para escribirlo en el fichero provincias
 		
-		File f3=new File("C:\\Users\\ifc\\eclipse-workspace\\provincias.txt");
+		File f3=new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\provincias.txt");
 		
 		FileWriter fichero_escritura = new FileWriter(f3);
 		
@@ -19,7 +19,7 @@ public class Provincias {
 		provincias[0]="Zaragoza";
 		provincias[1]="Teruel";
 		provincias[2]="Huesca";
-		provincias[3]="Logroño";
+		provincias[3]="Logroï¿½o";
 		provincias[4]="Pamplona";
 		provincias[5]="Madrid";
 		provincias[6]="Salamanca";

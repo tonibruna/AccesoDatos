@@ -13,7 +13,7 @@ public class LeerLinea {
 		
 		//Con esto leemos una linea completa, en vez de caracter por caracter
 
-		File f4=new File("C:\\Users\\ifc\\eclipse-workspace\\LeerLinea.txt");
+		File f4=new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\LeerLinea.txt");
 		
 		FileReader fichero = new FileReader (f4);
 		

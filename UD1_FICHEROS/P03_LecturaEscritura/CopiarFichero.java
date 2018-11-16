@@ -11,11 +11,11 @@ public class CopiarFichero {
 		// TODO Auto-generated method stub
 		
 		//Creamos el primer fichero
-		File f1 = new File("C:\\Users\\ifc\\eclipse-workspace\\copiarfichero1.txt");
+		File f1 = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\copiarfichero1.txt");
 		f1.createNewFile();
 		
 		//Creamos el segundo fichero donde copiaremos
-		File f2 = new File("C:\\Users\\ifc\\eclipse-workspace\\copiarfichero2.txt");
+		File f2 = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\copiarfichero2.txt");
 		f2.createNewFile();
 		
 		int i=0; //creamos la variable i

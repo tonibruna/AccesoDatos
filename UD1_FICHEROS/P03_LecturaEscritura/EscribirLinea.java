@@ -12,7 +12,7 @@ public class EscribirLinea {
 		
 		try {
 		
-		File f5=new File("C:\\Users\\ifc\\eclipse-workspace\\LeerLinea.txt");
+		File f5=new File("C:\\Users\\ifc\\eclipse-workspace\\ACCESO_DATOS_DAM_2\\UD1_FICHEROS\\ficheros\\LeerLinea.txt");
 		
 		FileWriter fichero = new FileWriter (f5);
 		

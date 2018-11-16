@@ -9,7 +9,7 @@ public class Lectura {
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 		
-		File f1 = new File("D:\\eclipse-workspace\\AD_01_Fciheros\\src\\P03_LecturaEscritura\\fichero_lectura.txt");		
+		File f1 = new File("C:\\Users\\ifc\\eclipse-workspace\\ACCESO_DATOS_DAM_2\\UD1_FICHEROS\\ficheros.txt");		
 		
 		//Se puede hacer de dos maneras, una poniendo en la cabecera throws IOException
 		//y otra poniendo el try catch(IOException)		

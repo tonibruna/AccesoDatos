@@ -9,7 +9,7 @@ public class Escritura {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		File f2=new File("C:\\Users\\ifc\\eclipse-workspace\\f1.txt"); 
+		File f2=new File("C:\\Users\\ifc\\eclipse-workspace\\ACCESO_DATOS_DAM_2\\UD1_FICHEROS\\ficheros\\f1.txt"); 
 		
 		FileWriter fichero_escritura = new FileWriter(f2);
 		
@@ -20,7 +20,7 @@ public class Escritura {
 			fichero_escritura.write(c_array[i]);
 		}
 		
-		fichero_escritura.append("*");//con esto añadimos este caracter al final de lo escrito
+		fichero_escritura.append("*");//con esto aï¿½adimos este caracter al final de lo escrito
 		
 		fichero_escritura.close();
 		
