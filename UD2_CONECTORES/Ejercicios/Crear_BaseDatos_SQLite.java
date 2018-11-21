@@ -18,7 +18,7 @@ public class Crear_BaseDatos_SQLite {
 	  Connection connection = null;
 		
 	  try {
-		  
+		   
 		// Crear una conexion de base de datos
           connection = DriverManager.getConnection
           ("jdbc:sqlite:C:\\Users\\ifc\\eclipse-workspace\\ACCESO_DATOS_DAM_2\\UD2_CONECTORES\\SQLite\\SQLite\\datos.db");
