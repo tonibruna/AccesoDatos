@@ -4,14 +4,7 @@
 	<classpathentry excluding="librerias/|P02_Metodos/nuevoDirectorio/|P02_Metodos/TBBT/|ficheros/" kind="src" path="UD1_FICHEROS"/>
 	<classpathentry excluding="MySQL/librerias/|SQLite/librerias/|SQLite/" kind="src" path="UD2_CONECTORES"/>
 	<classpathentry kind="src" path="UD3_ HERRAMIENTAS_DE_MAPEO_OBJETO_RELACIONAL"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-core.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-impl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-jxc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-xjc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/xstream-1.4.11.1/lib/xstream/kxml2-min-2.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/xstream-1.4.11.1/lib/xstream-1.4.11.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ifc/Downloads/mysql-connector-java-8.0.13.jar"/>
 	<classpathentry kind="lib" path="UD2_CONECTORES/SQLite/sqlite-jdbc-3.23.1.jar"/>
+	<classpathentry kind="lib" path="UD2_CONECTORES/MySQL/librerias/mysql-connector-java-8.0.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

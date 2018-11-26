@@ -6,6 +6,11 @@ package MySQL;
 
 import java.sql.*;
 
+/**
+ * 
+ * @author Toni Bruna
+ *
+ */
 public class ConnMySQL {
 	
 	public static void main(String[] args) {
