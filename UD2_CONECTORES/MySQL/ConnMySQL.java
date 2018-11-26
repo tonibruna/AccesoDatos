@@ -1,3 +1,7 @@
+/*Clase que crea una tabla usuario si no existe en la base de datos que se 
+ * encuentra en https://www.db4free.net/phpMyAdmin/ y muetra los datos de 
+ * los campos nombre, apellido y edad.*/
+
 package MySQL;
 
 import java.sql.*;
@@ -9,6 +13,7 @@ public class ConnMySQL {
 	    System.out.println("Iniciando");
 	    
 	    // Creando la conexión
+	    
 	    try {
 	    	
 	        Class.forName("com.mysql.cj.jdbc.Driver");
