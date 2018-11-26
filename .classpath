@@ -3,6 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry excluding="librerias/|P02_Metodos/nuevoDirectorio/|P02_Metodos/TBBT/|ficheros/" kind="src" path="UD1_FICHEROS"/>
 	<classpathentry excluding="MySQL/librerias/|SQLite/librerias/|SQLite/" kind="src" path="UD2_CONECTORES"/>
+	<classpathentry kind="src" path="UD3_ HERRAMIENTAS_DE_MAPEO_OBJETO_RELACIONAL"/>
 	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-core.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ifc/eclipse-workspace/ACCESO_DATOS_DAM_2/UD1_FICHEROS/librerias/jaxb-impl.jar"/>
