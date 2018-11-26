@@ -1,6 +1,9 @@
+/*Clase que se conecta con una base de datos SQLite (local), crea una tabla llamda persona
+ * que contiene 6 campos e implementa métodos diferentes para realizar las operaciones 
+ * básicas sobre una BD (CRUD)*/
+
 package Ejercicios;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -19,7 +22,7 @@ public class Crear_BaseDatos_SQLite {
 		
 	  try {
 		   
-		// Crear una conexion de base de datos
+		// Crear una conexion de base de datos   
           connection = DriverManager.getConnection
           ("jdbc:sqlite:C:\\Users\\ifc\\eclipse-workspace\\ACCESO_DATOS_DAM_2\\UD2_CONECTORES\\SQLite\\SQLite\\datos.db");
           
