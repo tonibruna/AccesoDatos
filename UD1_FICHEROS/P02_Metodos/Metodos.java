@@ -1,3 +1,5 @@
+//Clase que contiene métodos que muestran información de un fichero
+
 package P02_Metodos;
 
 import java.io.File;
@@ -7,7 +9,7 @@ public class Metodos {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String path = "C:\\Users\\ifc\\eclipse-workspace\\f1.txt";
+		String path = "C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P02_Metodos\\f_1.txt";
 		File f1 = new File(path);
 		
 		if(f1.exists()) {
