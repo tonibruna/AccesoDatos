@@ -6,5 +6,12 @@
 	<classpathentry kind="src" path="UD3_ HERRAMIENTAS_DE_MAPEO_OBJETO_RELACIONAL"/>
 	<classpathentry kind="lib" path="UD2_CONECTORES/SQLite/sqlite-jdbc-3.23.1.jar"/>
 	<classpathentry kind="lib" path="UD2_CONECTORES/MySQL/librerias/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/jaxb-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/xstream-1.4.11.1/lib/xstream/kxml2-min-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maria Aznar/git/AccesoDatos/UD1_FICHEROS/librerias/xstream-1.4.11.1/lib/xstream-1.4.11.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
