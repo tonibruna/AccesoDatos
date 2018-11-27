@@ -1,3 +1,6 @@
+/*Clase que va a hacer una consulta en un fichero aleatorio.
+ * Lo que vamos a hacer es en vez de leer todos los empleados, solo queremos leer uno (consulta)*/
+
 package P04_FicherosBytes;
 
 import java.io.File;
@@ -8,7 +11,7 @@ public class Consulta_fichero_aleatoria {//para consultar directamente un determ
 
 	public static void main(String[] args) throws IOException{
 		
-		File f2 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\aleatorio.dat");
+		File f2 = new File ("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\aleatorio.dat");
 		
 		RandomAccessFile raf = new RandomAccessFile(f2,"r");//acceso a fichero aleatorio
 		

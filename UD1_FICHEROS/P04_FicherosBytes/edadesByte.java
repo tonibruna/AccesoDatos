@@ -1,6 +1,6 @@
 /*
- * Este programa crea un fichero de tipo binario, escribe en él los nombres y edades de 10 personas,
- * y después los lee y los envía a la salida estándar
+ * Este programa crea un fichero de tipo binario, escribe en ï¿½l los nombres y edades de 10 personas,
+ * y despuï¿½s los lee y los envï¿½a a la salida estï¿½ndar
  * */
 
 package P04_FicherosBytes;
@@ -17,7 +17,7 @@ public class edadesByte {
 
 	public static void main(String[] args) throws IOException{
 		
-		File f = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\edades.dat");
+		File f = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\edades.dat");
 		f.createNewFile();
 		FileOutputStream fileout = new FileOutputStream(f);
 		DataOutputStream dataOS = new DataOutputStream(fileout);
