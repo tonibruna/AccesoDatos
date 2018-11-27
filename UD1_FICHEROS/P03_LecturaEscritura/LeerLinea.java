@@ -1,3 +1,5 @@
+//Clase que lee las líneas completas que contiene un fichero de texto
+
 package P03_LecturaEscritura;
 
 import java.io.BufferedReader;
@@ -13,7 +15,7 @@ public class LeerLinea {
 		
 		//Con esto leemos una linea completa, en vez de caracter por caracter
 
-		File f4=new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\LeerLinea.txt");
+		File f4=new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P03_LecturaEscritura\\LeerLinea.txt");
 		
 		FileReader fichero = new FileReader (f4);
 		

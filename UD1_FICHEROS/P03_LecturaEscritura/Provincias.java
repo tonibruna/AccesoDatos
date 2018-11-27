@@ -1,3 +1,6 @@
+/*Clase que escribe en un fichero de texto las provincias
+ que se han introducido en un array de String*/
+
 package P03_LecturaEscritura;
 
 import java.io.File;
@@ -10,7 +13,7 @@ public class Provincias {
 		
 		//Metemos un array de provincias para escribirlo en el fichero provincias
 		
-		File f3=new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\provincias.txt");
+		File f3=new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P03_LecturaEscritura\\provincias.txt");
 		
 		FileWriter fichero_escritura = new FileWriter(f3);
 		

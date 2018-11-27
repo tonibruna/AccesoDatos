@@ -1,3 +1,5 @@
+//Clase que copia el contenido de un fichero de texto en otro fichero de texto
+
 package P03_LecturaEscritura;
 
 import java.io.File;
@@ -11,11 +13,11 @@ public class CopiarFichero {
 		// TODO Auto-generated method stub
 		
 		//Creamos el primer fichero
-		File f1 = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\copiarfichero1.txt");
+		File f1 = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P03_LecturaEscritura\\copiarfichero1.txt");
 		f1.createNewFile();
 		
 		//Creamos el segundo fichero donde copiaremos
-		File f2 = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\ficheros\\copiarfichero2.txt");
+		File f2 = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P03_LecturaEscritura\\copiarfichero2.txt");
 		f2.createNewFile();
 		
 		int i=0; //creamos la variable i
