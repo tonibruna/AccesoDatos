@@ -1,3 +1,5 @@
+//Clase que lee un fichero de texto carácter a carácter
+
 package P03_LecturaEscritura;
 
 import java.io.File;
@@ -9,7 +11,7 @@ public class Lectura {
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 		
-		File f1 = new File("C:\\Users\\ifc\\eclipse-workspace\\ACCESO_DATOS_DAM_2\\UD1_FICHEROS\\ficheros.txt");		
+		File f1 = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P03_LecturaEscritura\\fichero_lectura.txt");		
 		
 		//Se puede hacer de dos maneras, una poniendo en la cabecera throws IOException
 		//y otra poniendo el try catch(IOException)		
