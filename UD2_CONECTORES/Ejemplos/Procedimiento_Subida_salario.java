@@ -20,8 +20,8 @@ public class Procedimiento_Subida_salario {
     				); 
 
 			// recuperar parametros de main
-			String dep = "1";   //"10"; // departamento
-			String subida = "5000";//"1000"; // subida
+			int dep = 1;   //"10"; // departamento
+			float subida = 500;//"1000"; // subida
 			
 			// construir orden DE LLAMADA
 			String sql = "{ call subida_sal_toni (?, ?) } "; 
@@ -30,8 +30,8 @@ public class Procedimiento_Subida_salario {
 			CallableStatement llamada = conexion.prepareCall(sql);
 			
 			// Damos valor a los argumentos
-			llamada.setInt(1, Integer.parseInt(dep)); // primer argumento-dep ?
-			llamada.setFloat(2, Float.parseFloat(subida)); // segundo arg ?
+			llamada.setInt(1, dep); // primer argumento-dep ?
+			llamada.setFloat(2,subida); // segundo arg ?
 															
 			llamada.executeUpdate(); // ejecutar el procedimiento
 			System.out.println("Subida realizada....");
