@@ -1,25 +1,32 @@
 package P06_JAXB;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlType; 
 
-@XmlType(propOrder = {"id", "anyo", "titulo", "artista", "cancion_españa"}) 
+/*anotacion para establecer el orden en el que se introducirán 
+ los elementos en el mfichero xml*/
+@XmlType(propOrder = {"id", "anyo", "titulo", "artista", "cancion_espanya"}) 
 
-public class Ej1_Cancion_JABX {
+public class Ej1_Cancion_JABX implements Serializable{
 
 	   private int id;
 	   private int anyo;
 	   private String titulo;
 	   private String artista;
-	   private Boolean cancion_españa;
+	   private Boolean cancion_espanya;
 	    
-	 public Ej1_Cancion_JABX(int id, int anyo, String titulo, String artista, Boolean cancion_españa) {
+	 public Ej1_Cancion_JABX(int i, int a, String ti, String ar, Boolean c_esp) {
 		 
-			id=this.id;
-			anyo=this.anyo;
-			titulo=this.titulo;
-			artista=this.artista;
-			cancion_españa=this.cancion_españa;
+			id=i;
+			anyo=a;
+			titulo=ti;
+			artista=ar;
+			cancion_espanya=c_esp;
 		}
+	 
+	 public Ej1_Cancion_JABX() { //creamos un constructor vacio
+		 
+	 }
 
 		public int getId() {
 			return id;
@@ -42,7 +49,7 @@ public class Ej1_Cancion_JABX {
 		}
 		
 		public boolean getCancionEspañola() {
-			return cancion_españa;
+			return cancion_espanya;
 			
 		}
 		
@@ -70,7 +77,7 @@ public class Ej1_Cancion_JABX {
 		
 		public void setCancionEspañola (boolean ce) {
 			
-			this.cancion_españa=ce;
+			this.cancion_espanya=ce;
 		
 		}
 	}

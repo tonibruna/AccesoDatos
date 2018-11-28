@@ -23,8 +23,7 @@ public class Ejemplo2_JAXB_Canciones {
 	//Ruta del pc de clase
 	
 	private static final String ruta_xml = 
-			"C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P06_JAXB"
-			+ "\\canciones_jabx.xml";
+			"C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P06_JAXB\\canciones_jabx.xml";
 	
 
 	public static void main(String[] args) throws JAXBException, FileNotFoundException{
