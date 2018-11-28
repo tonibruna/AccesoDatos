@@ -1,3 +1,5 @@
+/*Clase que inserta datos al final del fichero aleatorio*/
+
 package P04_FicherosBytes;
 
 import java.io.File;
@@ -8,7 +10,7 @@ public class Insertar_final_fichero_aleatorio {
 
 	public static void main(String[] args) throws IOException{
 		
-		File f2 = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\aleatorio.dat");
+		File f2 = new File ("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\aleatorio.dat");
 		
 		RandomAccessFile raf = new RandomAccessFile(f2,"rw");
 		

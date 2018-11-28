@@ -1,3 +1,5 @@
+/*Clase que escribe 10 nombres, 10 salarios y 10 departamentos en un fichero aleatorio.*/
+
 package P04_FicherosBytes;
 
 import java.io.File;

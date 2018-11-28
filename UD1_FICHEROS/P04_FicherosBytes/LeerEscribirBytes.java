@@ -1,3 +1,5 @@
+/*Clase que lee y escribe datos sobre un fichero binario*/
+
 package P04_FicherosBytes;
 
 import java.io.File;
@@ -9,7 +11,7 @@ public class LeerEscribirBytes {
 
 	public static void main(String[] args) throws IOException{
 	
-		File f = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\datos.dat");
+		File f = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\datos.dat");
 		f.createNewFile();
 		FileOutputStream fileout = new FileOutputStream(f);
 		FileInputStream filein = new FileInputStream(f);

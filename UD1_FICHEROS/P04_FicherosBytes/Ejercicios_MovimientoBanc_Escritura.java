@@ -1,3 +1,5 @@
+/*Clase que escribe los movimientos bancarios de una cuenta corriente*/
+
 package P04_FicherosBytes;
 
 import java.io.File;
@@ -10,7 +12,7 @@ public class Ejercicios_MovimientoBanc_Escritura {
 
 	public static void main(String[] args) throws IOException{
 		
-		File f = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\mov_bancario.dat");
+		File f = new File ("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\mov_bancario.dat");
 		f.createNewFile();
 		FileOutputStream fileout = new FileOutputStream(f);
 		ObjectOutputStream objectout = new ObjectOutputStream(fileout);
@@ -37,8 +39,10 @@ public class Ejercicios_MovimientoBanc_Escritura {
 			tipo=teclado.nextBoolean();
 			teclado.nextLine();
 		
+				//Iniciar el movimiento bancario
 				mo = new MovimientoBancario (fecha, concepto, cantidad, tipo);
 				
+				//escribir un objeto en un fichero
 				objectout.writeObject(mo);
 				
 		      System.out.println("Quieres seguir haciendo movimientos?(Si/No)");

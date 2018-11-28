@@ -1,3 +1,6 @@
+/*Clase que escribe 5 objetos Persona en un fichero.
+ * Los atributos son pasados por teclado.*/
+
 package P04_FicherosBytes;
 
 import java.io.File;
@@ -10,7 +13,7 @@ public class Escritura_de_objetos {
 
 	public static void main(String[] args) throws IOException{
 		
-		File f = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\personas.dat");
+		File f = new File ("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\personas.dat");
 		f.createNewFile();
 		FileOutputStream fileout = new FileOutputStream(f);
 		ObjectOutputStream objectout = new ObjectOutputStream(fileout);
@@ -30,11 +33,13 @@ public class Escritura_de_objetos {
 		}
 		
 		for(int i=0; i<5; i++) {
+			
 			//inicializamos persona
 			pe = new Persona(edades[i],nombres[i]);
 			//escribir un objeto en un fichero
 			objectout.writeObject(pe);
 		}
+		
 		teclado.close();
 		objectout.close();
 	}

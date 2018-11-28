@@ -1,3 +1,5 @@
+/*Clase que escribe y lee datos primitivos sobre un fichero binario*/
+
 package P04_FicherosBytes;
 
 import java.io.DataInputStream;
@@ -12,7 +14,7 @@ public class DatosPrimitivos {
 
 	public static void main(String[] args) throws IOException{
 	
-		File f = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P04_FicherosBytes\\primitivos.dat");
+		File f = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P04_FicherosBytes\\primitivos.dat");
 		f.createNewFile();
 		FileOutputStream fileout = new FileOutputStream(f);
 		DataOutputStream dataOS = new DataOutputStream(fileout);
@@ -48,7 +50,8 @@ public class DatosPrimitivos {
 				System.out.println("Esto es un String: "+str);
 			}
 		}catch (EOFException eo) {
-			System.out.println("Error");//Sale simepre al final porque siempre espera algun fichero más
+			System.out.println("Error");//Sale simepre al final porque siempre espera algun fichero mï¿½s
 		}		
+		dataIS.close();
 	}
 }
