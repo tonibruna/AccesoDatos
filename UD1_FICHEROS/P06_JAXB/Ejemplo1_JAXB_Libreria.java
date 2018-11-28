@@ -14,7 +14,7 @@ import javax.xml.bind.Unmarshaller;
 
 public class Ejemplo1_JAXB_Libreria { 
  
-    private static final String MIARCHIVO_XML = "C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\JAXB\\libreria.xml";
+    private static final String MIARCHIVO_XML = "C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P06_JAXB\\libreria.xml";
  
     public static void main(String[] args) throws JAXBException, IOException {
         //Se crea la lista de libros

@@ -2,6 +2,8 @@ package P06_JAXB;
 
 import javax.xml.bind.annotation.XmlType; 
 
+/*anotacion para establecer el orden en el que se introducirán 
+  los elementos en el mfichero xml*/
 @XmlType(propOrder = {"autor", "nombre", "editorial", "isbn"})
 
 public class Libro {  
