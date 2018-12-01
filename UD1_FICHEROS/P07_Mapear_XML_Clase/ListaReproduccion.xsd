@@ -7,13 +7,13 @@
   <xsd:complexType name="ListaType">
   <xsd:sequence>
    <xsd:element name="cancion" type="DatosCanc"/>
-   <xsd:element name="lista" type="ListaReproccion"/>
+   <xsd:element name="lista" type="ListaReproduccion"/>
   </xsd:sequence>
  </xsd:complexType>
 
  <xsd:complexType name="DatosCanc">
   <xsd:sequence>
-    <xsd:element name="id" type="xsd:interger"/>
+    <xsd:element name="id" type="xsd:integer"/>
     <xsd:element name="anyo" type="xsd:integer"/>
     <xsd:element name="titulo" type="xsd:string"/>
     <xsd:element name="artista" type="xsd:string"/>
