@@ -1,3 +1,6 @@
+/*Clase que realiza lo mismo que la clase annterior PruebaSax, pero esta vez con 
+ * un contador para que cuente el número de canciones que son españolas*/
+
 package XML_Manejo;
 
 import java.io.*;
@@ -17,23 +20,23 @@ public class Leer_Xml_Canciones {
 		
 	 XMLReader  procesadorXML = XMLReaderFactory.createXMLReader();
 	 
-	 GestionContenido gestor= new GestionContenido();  
+	 GestionContenido2 gestor= new GestionContenido2();  
 	 
 	 procesadorXML.setContentHandler(gestor);
 	 
  	 InputSource fileXML = 
- 			 new InputSource("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\canciones.xml");	    
+ 			 new InputSource("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\XML_Manejo\\canciones.xml");	    
        
  	 procesadorXML.parse(fileXML);        	      
 	
 	}
 }
 
-class GestionContenido extends DefaultHandler {	 
+class GestionContenido2 extends DefaultHandler {	 
 	
 	int contador;
 	
-	    public GestionContenido() {
+	    public GestionContenido2() {
 	        super();
 	    }	    
 	    

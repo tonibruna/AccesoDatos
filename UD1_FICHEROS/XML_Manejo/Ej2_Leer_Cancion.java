@@ -1,3 +1,5 @@
+/**Clase que lee el objeto ListaCanciones en el que se encuentran todas las canciones*/
+
 package XML_Manejo;
 
 import java.io.*;
@@ -20,8 +22,8 @@ public class Ej2_Leer_Cancion {
 		 
 		 //leemos el fichero XML
 		 Ej2_Lista_Canciones listadoTodas = (Ej2_Lista_Canciones) 
-		         xstream.fromXML(new FileInputStream("C:\\Users\\ifc\\"
-		         	+ "eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones_xs.xml"));			
+		         xstream.fromXML(new FileInputStream("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS"
+		         		+ "\\XML_Manejo\\Canciones_xs.xml"));			
 		    System.out.println("Numero de Canciones: " + 
 		         listadoTodas.getListaCanciones().size());
 		    

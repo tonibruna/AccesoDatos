@@ -1,3 +1,5 @@
+// Clase que recibe 5 objetos cancion y los mete en un fichero de bytes (Canciones.dat)
+
 package XML_Manejo;
 
 import java.io.File;
@@ -12,8 +14,8 @@ public class Ej1_Generar_Cancion {
 
 	public static void main(String[] args) throws IOException {
 		
-		File f = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros"
-		+"\\src\\XML_Manejo\\Canciones.dat");
+		File f = new File ("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS"
+				+ "\\XML_Manejo\\Canciones.dat");
 		f.createNewFile();
 		
 		FileOutputStream fileout = new FileOutputStream(f);

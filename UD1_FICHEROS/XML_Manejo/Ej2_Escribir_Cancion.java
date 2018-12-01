@@ -1,4 +1,5 @@
-//Convertir un archivo Java en un XML
+/*Clase donde escribimos las canciones del fichero Canciones.dat en el objeto ListaCanciones 
+ * de la clase anterior y las metemos en el XML Canciones_xs.xml*/
 
 package XML_Manejo;
 
@@ -10,7 +11,7 @@ public class Ej2_Escribir_Cancion {
 	public static void main(String[] args) 
 			throws IOException, ClassNotFoundException{
 		
-		File fichero = new File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones.dat");
+		File fichero = new File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\XML_Manejo\\Canciones.dat");
 		//flujo de entrada 
    		FileInputStream filein = new FileInputStream(fichero); 
    		
@@ -50,8 +51,8 @@ public class Ej2_Escribir_Cancion {
                                 (Ej2_Lista_Canciones.class, "lista");
       		//Insertar los objetos en el XML
       	      xstream.toXML(listacan, new
-                         FileOutputStream("C:\\Users\\ifc\\"
-                       + "eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones_xs.xml"));	
+                         FileOutputStream("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS"
+                         		+ "\\XML_Manejo\\Canciones_xs.xml"));	
       		System.out.println("Creado fichero XML....");
       	
            }catch (Exception e) 

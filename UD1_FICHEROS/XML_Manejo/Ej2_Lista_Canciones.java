@@ -1,3 +1,6 @@
+/*Creamos una lista de tipo canción, para introducir ahí todas las canciones
+ * del fichero Canciones.dat*/
+
 package XML_Manejo;
 
 import java.util.ArrayList;

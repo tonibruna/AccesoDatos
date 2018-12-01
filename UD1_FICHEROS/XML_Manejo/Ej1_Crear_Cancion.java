@@ -1,3 +1,7 @@
+/*Clase que crea un documento XML partiendo del fichero Canciones.dat,
+ * que contiene información sobre 5 objetos Cancion. 
+ * Después mostrar el contenido del documento por consola.*/
+
 package XML_Manejo;
 
 import java.io.File;
@@ -25,7 +29,7 @@ public class Ej1_Crear_Cancion {
 		
 		 //Creamos variable de fichero y flujo de lectura de objetos
 		
-		  File f = new File ("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones.dat");
+		  File f = new File ("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\XML_Manejo\\Canciones.dat");
 	 	  
 		  FileInputStream fileIn = new FileInputStream(f);
 		  ObjectInputStream objectIn = new ObjectInputStream(fileIn);
@@ -77,7 +81,7 @@ public class Ej1_Crear_Cancion {
 		     Source source = new DOMSource(document);
 		     
 		     Result result = 
-		            new StreamResult(new java.io.File("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\XML_Manejo\\Canciones.xml"));  
+		            new StreamResult(new java.io.File("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\XML_Manejo\\Canciones.xml"));  
 		     
 		     Transformer transformer =
 		            TransformerFactory.newInstance().newTransformer();
