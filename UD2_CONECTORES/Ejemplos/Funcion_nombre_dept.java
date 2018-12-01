@@ -1,3 +1,7 @@
+/*Clase que hace una llamada a la función nombre_dep_toni,
+ * que trata de mostrar el nombre del departamento cuyo dpto_no
+ * es pasado por parámetro*/
+
 package Ejemplos;
 
 import java.sql.*;
