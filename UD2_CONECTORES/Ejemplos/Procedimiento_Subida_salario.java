@@ -1,5 +1,7 @@
-//con esta clase ejecutamos subidas a los empleados partiendo 
-//de su numero de empleado. Lo miramos a traves de PHPmyadmin
+/*Clase que hace una llamada al procedimiento subida_sal_jorge,
+ * que trata de subir el salario a los empleados, para ello
+ * se pasa por parámetro el dpto_no y la cantidad de dinero
+ * que le quieres subir*/
 
 package Ejemplos;
 
