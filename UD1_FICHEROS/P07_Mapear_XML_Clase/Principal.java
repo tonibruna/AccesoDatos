@@ -19,23 +19,23 @@ import P07_Mapear_XML_Clase.Ventas.Venta;
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws IOException, JAXBException {
 
 		visualizarxml();
 		// Método para añadir una venta, recibe el número de venta,
 		// las unidades
 		// el nombre cliente, la fecha
 		// Comprobar que el número de venta no exista
-		insertarventa(25, "Cliente 2", 10, "16-10-2018");
-		borrarventa(5);
-		modificarstock(-10);
-		modificarventa(25,20,"16-10-2018");
+		//insertarventa(25, "Cliente 2", 10, "16-10-2018");
+		//borrarventa(5);
+		//modificarstock(-10);
+		//modificarventa(25,20,"16-10-2018");
 		// visualizarxml();
 	}
 
 	// Metodo visualizar 
 	
-	public static void visualizarxml() {
+	public static void visualizarxml() throws IOException, JAXBException{
 
 		System.out.println("------------------------------ ");
 		System.out.println("-------VISUALIZAR XML--------- ");
@@ -51,7 +51,7 @@ public class Principal {
 			// La clase JAXBElement representa a un elemento de un documento XML
 			// en este caso a un elemento del documento ventasarticulos.xml
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
-					("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 			// Visualizo el documento
 			Marshaller m = jaxbContext.createMarshaller();
@@ -110,7 +110,7 @@ public class Principal {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
 			Unmarshaller u = jaxbContext.createUnmarshaller();
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
-					("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 			VentasType miventa = (VentasType) jaxbElement.getValue();
 
@@ -150,7 +150,7 @@ public class Principal {
 				Marshaller m = jaxbContext.createMarshaller();
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 				m.marshal(jaxbElement, new FileOutputStream
-						("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+						("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 				System.out.println("Venta añaadida: " + numeventa);
 
@@ -171,14 +171,14 @@ public class Principal {
 	private static boolean borrarventa(int numeventa) {
 
 			System.out.println("---------------------------- ");
-			System.out.println("-------AÑADIR VENTA--------- ");
+			System.out.println("-------BORRAR VENTA--------- ");
 			System.out.println("---------------------------- ");
 			try {	
 				
 				JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
 				Unmarshaller u = jaxbContext.createUnmarshaller();
 				JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
-						("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+						("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 				VentasType miventa = (VentasType) jaxbElement.getValue();
 				
@@ -211,7 +211,7 @@ public class Principal {
 					Marshaller m = jaxbContext.createMarshaller();
 					m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 					m.marshal(jaxbElement, new FileOutputStream
-							("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+							("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 					System.out.println("Se ha borrado la venta " + numeventa);
 					
@@ -240,7 +240,7 @@ public class Principal {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
 			Unmarshaller u = jaxbContext.createUnmarshaller();
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
-					("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 			VentasType miventa = (VentasType) jaxbElement.getValue();
 			
@@ -258,7 +258,7 @@ public class Principal {
 			Marshaller m = jaxbContext.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 			m.marshal(jaxbElement, new FileOutputStream
-					("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 			
 			System.out.println("Nuevo stock: "+ stock_anterior+" + "+cantidad+" = "+articulo.getStock());				
 			return true;
@@ -280,7 +280,7 @@ public class Principal {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
 			Unmarshaller u = jaxbContext.createUnmarshaller();
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
-					("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 
 			VentasType miventa = (VentasType) jaxbElement.getValue();
 			
@@ -313,7 +313,7 @@ public class Principal {
 				Marshaller m = jaxbContext.createMarshaller();
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 				m.marshal(jaxbElement, new FileOutputStream
-						("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
+						("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
 				
 				System.out.println("Venta modificada: " + numeventa);
 				

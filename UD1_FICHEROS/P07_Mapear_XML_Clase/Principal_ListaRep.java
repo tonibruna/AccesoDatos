@@ -1,3 +1,5 @@
+// 
+
 package P07_Mapear_XML_Clase;
 
 import java.io.FileInputStream;
@@ -19,7 +21,7 @@ import P07_Mapear_XML_Clase.ListaReproduccion.cancion;
 
 public class Principal_ListaRep {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, JAXBException{
 
 		visualizarxml();
 
@@ -42,7 +44,7 @@ public class Principal_ListaRep {
 			// La clase JAXBElement representa a un elemento de un documento XML
 			// en este caso a un elemento del documento ventasarticulos.xml
 			ListaReproduccion milista = (ListaReproduccion) u.unmarshal(new FileInputStream
-					("C:\\Users\\ifc\\eclipse-workspace\\AD_01_Ficheros\\src\\P07_Mapear_XML_Clase\\listareproduccion.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\listareproduccion.xml"));
 
 			// Visualizo el documento
 			Marshaller m = jaxbContext.createMarshaller();
@@ -57,7 +59,7 @@ public class Principal_ListaRep {
 
 			// Guardamos las ventas en la lista
 			List listaCancion = new ArrayList();
-			listaCancion = milista.getcancion();
+			listaCancion = milista.getCancion();
 
 			System.out.println("---------------------------- ");
 			System.out.println("---VISUALIZAR LOS OBJETOS--- ");
