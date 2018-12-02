@@ -1,4 +1,4 @@
-package P07_Mapear_XML_Clase;
+package Operaciones;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,9 +13,11 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import P07_Mapear_XML_Clase.*;
-import P07_Mapear_XML_Clase.Ventas.Venta;
-
+import JAXB_Clases_Ventas.DatosArtic;
+import JAXB_Clases_Ventas.ObjectFactory_Ventas;
+import JAXB_Clases_Ventas.Ventas;
+import JAXB_Clases_Ventas.VentasType;
+import JAXB_Clases_Ventas.Ventas.Venta;
 
 public class Principal {
 
@@ -42,7 +44,7 @@ public class Principal {
 		System.out.println("------------------------------ ");
 		try {
 			// JAXBContext jaxbContext = JAXBContext.newInstance("datosclases");
-			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory_Ventas.class);
 
 			// Crear un objeto de tipo Unmarshaller para convertir datos XML en
 			// un arbol de objetos Java
@@ -107,7 +109,7 @@ public class Principal {
 		System.out.println("---------------------------- ");
 		try {
 
-			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory_Ventas.class);
 			Unmarshaller u = jaxbContext.createUnmarshaller();
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
 					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
@@ -175,7 +177,7 @@ public class Principal {
 			System.out.println("---------------------------- ");
 			try {	
 				
-				JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+				JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory_Ventas.class);
 				Unmarshaller u = jaxbContext.createUnmarshaller();
 				JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
 						("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
@@ -237,7 +239,7 @@ public class Principal {
 		System.out.println("---------------------------- ");
 		try {
 			
-			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory_Ventas.class);
 			Unmarshaller u = jaxbContext.createUnmarshaller();
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
 					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));
@@ -277,7 +279,7 @@ public class Principal {
 		System.out.println("---------------------------- ");
 		try {
 			
-			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory_Ventas.class);
 			Unmarshaller u = jaxbContext.createUnmarshaller();
 			JAXBElement jaxbElement = (JAXBElement) u.unmarshal(new FileInputStream
 					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\ventasarticulos.xml"));

@@ -1,6 +1,5 @@
-// 
-
-package P07_Mapear_XML_Clase;
+package Operaciones;
+/*package P07_Mapear_XML_Clase;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -67,7 +66,7 @@ public class Principal_ListaRep {
 			
 
 			for (int i = 0; i < listaCancion.size(); i++) {
-				ListaReproduccion.cancion lis = (cancion) listaCancion.get(i);
+				Lista.cancion lis = (cancion) listaCancion.get(i);
 				System.out.println("Identificacion cancion: " + lis.getId() + ". Año: " + lis.getAnyo()
 						+ ", Titulo: " + lis.getTitulo() + ", artista: " + lis.getArtista()+ ". ¿Canción española?: " + lis.CancionEspañola());
 			}
@@ -79,4 +78,4 @@ public class Principal_ListaRep {
 		}
 
 	}
-}
+}*/

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Listareproduccion>
+    <cancion>
+        <id>1</id>
+        <anyo>2012</anyo>
+        <titulo>1999</titulo>
+        <artista>Loveof</artista>
+        <cancion_espana>true</cancion_espana>
+    </cancion>
+    <cancion>
+        <id>2</id>
+        <anyo>2004</anyo>
+        <titulo>Carolina</titulo>
+        <artista>Mclan</artista>
+        <cancion_espana>true</cancion_espana>
+    </cancion>
+</Listareproduccion>
