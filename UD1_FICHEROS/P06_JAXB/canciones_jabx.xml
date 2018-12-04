@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ListaCanciones>
+    <Cancion>
+        <id>1</id>
+        <anyo>2010</anyo>
+        <titulo>Arenas movedizas</titulo>
+        <artista>Sabina</artista>
+        <cancionEspanola>false</cancionEspanola>
+    </Cancion>
+    <Cancion>
+        <id>2</id>
+        <anyo>2014</anyo>
+        <titulo>Pajaros de Portugal</titulo>
+        <artista>Sabina</artista>
+        <cancionEspanola>false</cancionEspanola>
+    </Cancion>
+</ListaCanciones>
