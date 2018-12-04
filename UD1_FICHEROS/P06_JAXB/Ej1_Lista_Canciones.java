@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //@XmlRootElement(namespace = "")
 
 //Esto significa que la clases "Libreria.java" es el elemento raiz
- @XmlRootElement()
+ @XmlRootElement(name = "ListaCanciones")
 
 public class Ej1_Lista_Canciones {
 	
@@ -25,9 +25,8 @@ public class Ej1_Lista_Canciones {
 		
 	}
 	
-	public void setListaCanciones(ArrayList<Ej1_Cancion_JABX> vlista)
-	{
-		lista = vlista;
+	public void add(Ej1_Cancion_JABX c) {
+		lista.add(c);
 	}
 	
 	//-Wrapper, envoltura alrededor la representación XML
@@ -35,11 +34,14 @@ public class Ej1_Lista_Canciones {
 	//-Hay que poner estas anotaciones delante del metodo
 	//que devuelve la coleccion
 	
-    @XmlElementWrapper(name = "ListaCanciones") 
+    //@XmlElementWrapper(name = "ListaCanciones") 
     @XmlElement(name = "Cancion")
-	public List<Ej1_Cancion_JABX> getListaCanciones()
-	{
-		return lista;
+		public List<Ej1_Cancion_JABX> getListaCanciones() {
+			return lista;
 	}
+		
+		public void setListaCanciones(ArrayList<Ej1_Cancion_JABX> vlista) {
+			this.lista = vlista;
+		}
 
 }

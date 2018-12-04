@@ -42,7 +42,7 @@ public class Principal_ListaRep {
 			// La clase JAXBElement representa a un elemento de un documento XML
 			// en este caso a un elemento del documento ventasarticulos.xml
 			Listareproduccion milista = (Listareproduccion) u.unmarshal(new FileInputStream
-					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\listareproduccion.xml"));
+					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_P07_Mapear_XML_Clase\\ListaReproduccion.xml"));
 
 			// Visualizo el documento
 			Marshaller m = jaxbContext.createMarshaller();

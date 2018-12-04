@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /*anotacion para establecer el orden en el que se introducirán 
  los elementos en el mfichero xml*/
-@XmlType(propOrder = {"id", "anyo", "titulo", "artista", "cancion_espanya"}) 
+@XmlType(propOrder = {"id", "anyo", "titulo", "artista", "cancionEspanola"}) 
 
 public class Ej1_Cancion_JABX implements Serializable{
 
@@ -13,7 +13,7 @@ public class Ej1_Cancion_JABX implements Serializable{
 	   private int anyo;
 	   private String titulo;
 	   private String artista;
-	   private Boolean cancion_espanya;
+	   private boolean cancion_espanya;
 	    
 	 public Ej1_Cancion_JABX(int i, int a, String ti, String ar, Boolean c_esp) {
 		 
@@ -48,7 +48,7 @@ public class Ej1_Cancion_JABX implements Serializable{
 			
 		}
 		
-		public boolean getCancionEspañola() {
+		public boolean getCancionEspanola() {
 			return cancion_espanya;
 			
 		}
@@ -75,9 +75,9 @@ public class Ej1_Cancion_JABX implements Serializable{
 			this.artista=ar;
 		}
 		
-		public void setCancionEspañola (boolean ce) {
+		public void setCancionEspanola (boolean c_esp) {
 			
-			this.cancion_espanya=ce;
+			this.cancion_espanya=c_esp;
 		
 		}
 	}

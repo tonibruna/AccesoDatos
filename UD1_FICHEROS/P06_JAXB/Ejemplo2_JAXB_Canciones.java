@@ -7,7 +7,7 @@ Dentro de esa lista deben aparecer diferentes canciones.
 package P06_JAXB;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.FileReader;
 import java.util.ArrayList;
 
@@ -26,23 +26,23 @@ public class Ejemplo2_JAXB_Canciones {
 			"C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P06_JAXB\\canciones_jabx.xml";
 	
 
-	public static void main(String[] args) throws JAXBException, FileNotFoundException{
+	public static void main(String[] args) throws JAXBException, IOException{
 	
                 //Se crea la lista de canciones
-				ArrayList<Ej1_Cancion_JABX> lista = new ArrayList<Ej1_Cancion_JABX>();
+				ArrayList<Ej1_Cancion_JABX> cancionlista = new ArrayList<Ej1_Cancion_JABX>();
 				
 				//Creamos dos canciones y las añadimos
 				Ej1_Cancion_JABX c1 = new Ej1_Cancion_JABX(1, 2010, "Arenas movedizas",
 						"Sabina", false);
-				lista.add(c1);
+				cancionlista.add(c1);
 				
 				Ej1_Cancion_JABX c2 = new Ej1_Cancion_JABX(2, 2014, "Pajaros de Portugal",
 						"Sabina", false);
-				lista.add(c2);
+				cancionlista.add(c2);
 				
 				//se crea la lista de canciones y se le asigna la lista
 				Ej1_Lista_Canciones listaCanciones = new Ej1_Lista_Canciones();
-				listaCanciones.setListaCanciones(lista);
+				listaCanciones.setListaCanciones(cancionlista);
 				
 				//Creamos el contexto indicando la clase raiz
 				JAXBContext context = JAXBContext.newInstance(Ej1_Lista_Canciones.class);
@@ -68,6 +68,12 @@ public class Ejemplo2_JAXB_Canciones {
 		        //Utilizamos el método unmarshal, para obtener datos de un Reader
 		        Ej1_Lista_Canciones lista2 = (Ej1_Lista_Canciones) unmars.unmarshal(
 		        		new FileReader(ruta_xml));
+		        
+		        ArrayList<Ej1_Cancion_JABX> lista =(ArrayList<Ej1_Cancion_JABX>) lista2.getListaCanciones();
+		        for(Ej1_Cancion_JABX cancion : lista) {
+		        	System.out.println("\tTitulo de la cancion: "+cancion.getTitulo()
+		            +"\n\tArtista de la canción: "+cancion.getArtista()+"\n");
+		        }
 				
 	}
 
