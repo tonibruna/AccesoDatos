@@ -1,5 +1,4 @@
 package Operaciones;
-/*package P07_Mapear_XML_Clase;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,15 +7,15 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.spi.ObjectFactory;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import Ejercicio_Menu_Musical.ListaReproduccion;
-import P07_Mapear_XML_Clase.*;
-import P07_Mapear_XML_Clase.ListaReproduccion.cancion;
+import JAXB_Clases_ListaRepr.*;
+import JAXB_Clases_ListaRepr.Listareproduccion.Cancion;
 
 public class Principal_ListaRep {
 	
@@ -42,7 +41,7 @@ public class Principal_ListaRep {
 
 			// La clase JAXBElement representa a un elemento de un documento XML
 			// en este caso a un elemento del documento ventasarticulos.xml
-			ListaReproduccion milista = (ListaReproduccion) u.unmarshal(new FileInputStream
+			Listareproduccion milista = (Listareproduccion) u.unmarshal(new FileInputStream
 					("C:\\Users\\Maria Aznar\\git\\AccesoDatos\\UD1_FICHEROS\\P07_Mapear_XML_Clase\\listareproduccion.xml"));
 
 			// Visualizo el documento
@@ -66,9 +65,9 @@ public class Principal_ListaRep {
 			
 
 			for (int i = 0; i < listaCancion.size(); i++) {
-				Lista.cancion lis = (cancion) listaCancion.get(i);
+				Listareproduccion.Cancion lis = (Cancion) listaCancion.get(i);
 				System.out.println("Identificacion cancion: " + lis.getId() + ". Año: " + lis.getAnyo()
-						+ ", Titulo: " + lis.getTitulo() + ", artista: " + lis.getArtista()+ ". ¿Canción española?: " + lis.CancionEspañola());
+						+ ", Titulo: " + lis.getTitulo() + ", artista: " + lis.getArtista()+ ". ¿Canción española?: " + lis.isCancionEspana());
 			}
 
 		} catch (JAXBException je) {
@@ -78,4 +77,4 @@ public class Principal_ListaRep {
 		}
 
 	}
-}*/
+}
