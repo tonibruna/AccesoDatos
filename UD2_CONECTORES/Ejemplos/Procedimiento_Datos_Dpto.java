@@ -1,4 +1,4 @@
-/*Hacemos llamada al precedimiento, recibe un numero de departamento
+/*Hacemos llamada al procedimiento, recibe un numero de departamento
  * y lo devuelve en parametros de salida Nombre y Localidad */
 
 package Ejemplos;
