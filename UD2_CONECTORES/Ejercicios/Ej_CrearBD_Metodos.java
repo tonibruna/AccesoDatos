@@ -252,4 +252,5 @@ public class Ej_CrearBD_Metodos {
 		 }
 	}
 	
-
+/*Para esta practica hay que crear una nueva base de datos en PHPmyAdmin, introduciendote en db4free.net poniendo un nombre de usuario y contraseña.
+ * Tras esto, introducimos todos los datos de crear tablas e insertar datos que nos dan*/
