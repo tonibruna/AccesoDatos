@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.XStream;
 
 public class Ej2_Leer_Cancion {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException, ClassNotFoundException{
 		
 		XStream xstream = new XStream();
 		

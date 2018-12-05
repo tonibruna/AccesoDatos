@@ -74,7 +74,7 @@ public class Ej1_Crear_Cancion {
 			         // Artista
 			         CrearElemento("artista",cancion.getArtista(), raiz,document); 
 			         //Cancion Espa�ola
-			         CrearElemento("cancion_espa�ola",Boolean.toString(cancion.getCancionEspañola()), 
+			         CrearElemento("cancion_espanola",Boolean.toString(cancion.getCancionEspañola()), 
 			        		 raiz, document); 
 				 }	
 				
